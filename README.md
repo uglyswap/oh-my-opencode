@@ -107,6 +107,44 @@ Créez `~/.config/opencode/oh-my-opencode.json`:
 }
 ```
 
+### ⚠️ IMPORTANT: Variable d'environnement Z AI
+
+Ce fork inclut les **4 MCP servers Z AI** qui nécessitent votre clé API:
+
+**MCPs Z AI inclus:**
+- `zai-vision` - Analyse multimodale (images, PDFs, diagrammes)
+- `web-search-prime` - Recherche web optimisée
+- `web-reader` - Lecture de pages web
+- `zread` - Recherche dans dépôts GitHub
+
+**Configuration requise:**
+
+Définissez la variable d'environnement `Z_AI_API_KEY` avec votre clé Z AI:
+
+```bash
+# Linux/macOS
+export Z_AI_API_KEY="votre_cle_api_zai_ici"
+
+# Windows PowerShell
+$env:Z_AI_API_KEY="votre_cle_api_zai_ici"
+
+# Windows CMD
+set Z_AI_API_KEY=votre_cle_api_zai_ici
+```
+
+**Pour rendre la variable permanente:**
+
+```bash
+# Ajouter à ~/.bashrc ou ~/.zshrc (Linux/macOS)
+echo 'export Z_AI_API_KEY="votre_cle_api_zai_ici"' >> ~/.bashrc
+source ~/.bashrc
+
+# OU ajouter aux variables d'environnement Windows
+# Panneau de configuration → Système → Avancé → Variables d'environnement
+```
+
+**⚠️ SÉCURITÉ**: Ne JAMAIS commit votre clé API dans git !
+
 ## 🤖 Agents Disponibles
 
 | Agent | Modèle (Défaut) | Rôle |
@@ -144,9 +182,17 @@ Donnez aux agents les mêmes outils que vous:
 Récupération automatique des erreurs de session. Plus de sessions crashées !
 
 ### 5. MCPs Intégrés
+
+**MCPs Original:**
 - **context7** - Documentation officielle librairies
-- **websearch_exa** - Web search temps réel
+- **websearch_exa** - Web search temps réel via Exa AI
 - **grep_app** - Recherche code GitHub publique
+
+**MCPs Z AI (nécessitent `Z_AI_API_KEY`):**
+- **zai-vision** - Analyse multimodale (images, PDFs, diagrammes)
+- **web-search-prime** - Recherche web optimisée Z AI
+- **web-reader** - Lecture de pages web
+- **zread** - Recherche dans dépôts GitHub
 
 ## 📖 Utilisation
 
