@@ -2,7 +2,7 @@ import type { AgentConfig } from "@opencode-ai/sdk"
 import type { AgentPromptMetadata } from "./types"
 import { createAgentToolRestrictions } from "../shared/permission-compat"
 
-const DEFAULT_MODEL = "google/gemini-3-flash"
+const DEFAULT_MODEL = "glm/glm-4.7"
 
 export const MULTIMODAL_LOOKER_PROMPT_METADATA: AgentPromptMetadata = {
   category: "utility",
