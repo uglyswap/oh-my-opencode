@@ -32,35 +32,61 @@
 
 ### Prérequis
 - **OpenCode 1.0.150+** installé
-- **GLM 4.7** configuré dans OpenCode (provider: `glm`)
+- **Compte Z AI** avec API key (disponible sur https://open.bigmodel.cn/)
 
-### Installation
+### Étape 1: Installer OpenCode
 
 ```bash
-# Installer le plugin
-npm install oh-my-opencode-glm
+# Via script d'installation (recommandé)
+curl -fsSL https://opencode.ai/install | bash
 
-# OU depuis ce fork
-cd oh-my-opencode-glm
-bun run build
-bunx oh-my-opencode install --no-tui --glm=yes
+# OU via npm
+npm install -g opencode-ai
 ```
 
-### Configuration OpenCode
+### Étape 2: Configurer l'authentification Z AI
 
-Ajoutez à votre `~/.config/opencode/opencode.json`:
+```bash
+# Lancer OpenCode
+opencode
 
-```json
+# Dans OpenCode, utiliser la commande:
+/models
+
+# Puis sélectionner "GLM-4.7" comme modèle
+```
+
+**Authentification automatique:**
+
+OpenCode vous demandera de vous authentifier. Sélectionnez **Z.AI**:
+
+```bash
+opencode auth login
+
+# Sélectionner: Z.AI
+# Entrer votre API key Z AI
+```
+
+Si vous avez le **GLM Coding Plan**, sélectionnez **Z.AI Coding Plan**.
+
+### Étape 3: Installer le plugin Oh My OpenCode
+
+```bash
+# Option 1: Depuis npm (après publication)
+npm install oh-my-opencode
+
+# Option 2: En local depuis ce fork
+git clone https://github.com/uglyswap/oh-my-opencode.git
+cd oh-my-opencode
+bun install
+bun run build
+
+# Configurer le plugin dans OpenCode
+# ~/.config/opencode/opencode.json:
 {
   "plugin": [
     "oh-my-opencode"
-  ],
-  "provider": {
-    "glm": {
-      "baseURL": "https://open.bigmodel.cn/api/paas/v4/",
-      "apiKey": "VOTRE_CLE_API"
-    }
-  }
+  ]
 }
 ```
 
