@@ -90,20 +90,32 @@ bun run build
 }
 ```
 
-### Configuration du Plugin (optionnel)
+### Configuration du Plugin
 
-Créez `~/.config/opencode/oh-my-opencode.json`:
+**Configuration par défaut incluse** (`.opencode/oh-my-opencode.json`)
+
+Ce fork inclut une configuration optimisée qui:
+- ✅ **Désactive 240+ skills inutiles** (scientifiques, médicaux, APIs externes)
+- ✅ **Réduit l'usage du contexte** de 53% à ~15% au premier message
+- ✅ **Garde les essentiels**: Next.js, React, TypeScript, Testing, Debugging, Cloudflare, etc.
+
+**Configuration personnalisée** (optionnel)
+
+Vous pouvez créer `~/.config/opencode/oh-my-opencode.json` pour personnaliser:
 
 ```jsonc
 {
-  // Tous les agents utilisent déjà GLM 4.7 par défaut
-  // Aucune configuration supplémentaire nécessaire !
-
   // Si vous voulez désactiver certains hooks:
   // "disabled_hooks": ["comment-checker", "agent-usage-reminder"],
 
   // Si vous voulez désactiver certains MCPs:
   // "disabled_mcps": ["context7", "websearch_exa", "grep_app"],
+
+  // Pour plus de contrôle sur les skills:
+  // "skills": {
+  //   "disable": ["skill1", "skill2"],
+  //   "enable": ["skill3"]
+  // }
 }
 ```
 
@@ -271,10 +283,18 @@ bun run build
 
 ## 📝 Changelog du Fork
 
+### v2.7.1-glm (2025-01-05)
+- ✅ **Configuration par défaut** pour réduire l'usage du contexte (240+ skills désactivés)
+- ✅ **Claude Code skills désactivés** par défaut pour réduire le contexte
+- ✅ **Contexte réduit** de 53% à ~15% au premier message
+- ✅ README mis à jour avec les détails de l'optimisation
+
 ### v2.7.0-glm (2025-01-04)
 - ✅ Tous les agents configurés pour `glm/glm-4.7` par défaut
 - ✅ README mis à jour pour GLM 4.7
 - ✅ Documentation d'installation simplifiée
+- ✅ 4 MCP Z AI intégrés (zai-vision, web-search-prime, web-reader, zread)
+- ✅ MCP websearch_exa désactivé (remplacé par web-search-prime)
 - ⏳ Prompts à optimiser pour GLM 4.7 (TODO)
 
 ## 🙏 Remerciements
