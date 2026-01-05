@@ -15,7 +15,11 @@
         "enum": [
           "websearch_exa",
           "context7",
-          "grep_app"
+          "grep_app",
+          "zai-vision",
+          "web-search-prime",
+          "web-reader",
+          "zread"
         ]
       }
     },
