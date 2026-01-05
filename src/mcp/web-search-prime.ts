@@ -21,6 +21,7 @@ export const web_search_prime = {
   url: "https://api.z.ai/api/mcp/web_search_prime/mcp",
   headers: {
     Authorization: `Bearer ${getZaiApiKey()}`,
+    Accept: "application/json, text/event-stream",
   },
   enabled: true,
 }
