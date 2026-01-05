@@ -19,10 +19,9 @@ function getZaiApiKey(): string {
 }
 
 export const zai_vision = {
-  type: "stdio" as const,
-  command: "cmd",
-  args: ["/c", "npx", "-y", "@z_ai/mcp-server"],
-  env: {
+  type: "local" as const,
+  command: ["npx", "-y", "@z_ai/mcp-server"],
+  environment: {
     Z_AI_API_KEY: getZaiApiKey(),
     Z_AI_MODE: "ZAI",
   },

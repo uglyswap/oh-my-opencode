@@ -17,11 +17,10 @@ function getZaiApiKey(): string {
 }
 
 export const zread = {
-  type: "http" as const,
+  type: "remote" as const,
   url: "https://api.z.ai/api/mcp/zread/mcp",
   headers: {
     Authorization: `Bearer ${getZaiApiKey()}`,
-    Accept: "application/json, text/event-stream",
   },
   enabled: true,
 }

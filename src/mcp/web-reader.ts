@@ -17,11 +17,10 @@ function getZaiApiKey(): string {
 }
 
 export const web_reader = {
-  type: "http" as const,
+  type: "remote" as const,
   url: "https://api.z.ai/api/mcp/web_reader/mcp",
   headers: {
     Authorization: `Bearer ${getZaiApiKey()}`,
-    Accept: "application/json, text/event-stream",
   },
   enabled: true,
 }
